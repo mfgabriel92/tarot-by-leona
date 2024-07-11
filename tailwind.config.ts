@@ -7,22 +7,28 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    colors: {
-      pink: {
-        900: "#380F25",
-        500: "#B20EBC",
-        300: "#C54DA7",
+    extend: {
+      fontFamily: {
+        title: "var(--cinzel-regular)",
+        body: "var(--luthier-regular)",
       },
-      purple: {
-        400: "#5E4A5E",
-        300: "#836088",
-        100: "#C1A5CB",
-      },
-      gray: {
-        500: "#474747",
-      },
-      yellow: {
-        400: "#FED47F",
+      colors: {
+        pink: {
+          900: "#380F25",
+          500: "#B20EBC",
+          300: "#C54DA7",
+        },
+        purple: {
+          400: "#5E4A5E",
+          300: "#836088",
+          100: "#C1A5CB",
+        },
+        gray: {
+          500: "#474747",
+        },
+        yellow: {
+          400: "#FED47F",
+        },
       },
     },
     container: {

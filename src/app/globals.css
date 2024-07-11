@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+h1,
+h2,
+h3 {
+  @apply font-title;
+}
+
+p,
+a {
+  @apply font-body;
+}
+
+svg {
+  @apply size-6;
+}
