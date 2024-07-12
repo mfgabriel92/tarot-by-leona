@@ -16,25 +16,25 @@ function DesktopNavbar() {
         height={116}
         alt="Tarot by Leona"
       />
-      <nav className="text-white mx-8 flex flex-1 justify-end gap-8">
-        <Link className="font-title" href="#about">
+      <nav className="mx-8 flex flex-1 justify-end gap-8">
+        <Link className="font-title text-white" href="#about">
           About
         </Link>
-        <Link className="font-title" href="#services">
+        <Link className="font-title text-white" href="#services">
           Services
         </Link>
-        <Link className="font-title" href="#testimonials">
+        <Link className="font-title text-white" href="#testimonials">
           Testimonials
         </Link>
-        <Link className="font-title" href="#shop">
+        <Link className="font-title text-white" href="#shop">
           Shop
         </Link>
       </nav>
-      <nav className="text-white flex flex-1 justify-end gap-8">
-        <Link href="#">
+      <nav className="flex flex-1 justify-end gap-8 text-white">
+        <Link href="#" className="text-white">
           <FontAwesomeIcon icon={faLinkedin} size="lg" />
         </Link>
-        <Link href="#">
+        <Link href="#" className="text-white">
           <FontAwesomeIcon icon={faFacebook} size="lg" />
         </Link>
       </nav>

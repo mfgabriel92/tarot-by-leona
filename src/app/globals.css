@@ -5,14 +5,18 @@
 h1,
 h2,
 h3 {
-  @apply font-title;
+  @apply font-title text-pink-900;
 }
 
 h1 {
   @apply text-5xl font-bold lg:text-7xl lg:leading-snug;
 }
 
+h2 {
+  @apply text-4xl;
+}
+
 p,
 a {
-  @apply font-body;
+  @apply font-body text-xl leading-relaxed text-gray-500;
 }
