@@ -51,7 +51,7 @@ export function Tarot() {
               whileInView={{
                 rotate,
               }}
-              viewport={{ amount: 0.5 }}
+              viewport={{ amount: 0.3 }}
               transition={{
                 duration: 0.7,
                 ease: "backInOut",
