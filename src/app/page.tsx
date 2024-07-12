@@ -4,9 +4,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <div className="container h-screen">
-        <About />
-      </div>
+      <About />
     </>
   );
 }
