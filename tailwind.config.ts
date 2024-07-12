@@ -7,6 +7,13 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      DEFAULT: "1440px",
+      lg: "1024px",
+      md: "992px",
+      sm: "768px",
+      xs: "576px",
+    },
     extend: {
       fontFamily: {
         title: "var(--cinzel-regular)",
@@ -33,9 +40,6 @@ const config: Config = {
     },
     container: {
       center: true,
-      screens: {
-        DEFAULT: "1440px",
-      },
     },
   },
   plugins: [],

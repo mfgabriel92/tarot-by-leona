@@ -8,11 +8,11 @@ h3 {
   @apply font-title;
 }
 
+h1 {
+  @apply text-5xl font-bold lg:text-7xl lg:leading-snug;
+}
+
 p,
 a {
   @apply font-body;
-}
-
-svg {
-  @apply size-6;
 }
