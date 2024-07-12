@@ -34,7 +34,7 @@ export function About() {
         width={586}
         height={1293}
         alt=""
-        className="absolute -right-16 opacity-70"
+        className="absolute -right-0 opacity-70"
       />
       <motion.section
         initial="hidden"
@@ -47,7 +47,7 @@ export function About() {
         <DesktopPicture />
         <MobilePicture />
         <div className="flex flex-1 flex-col justify-center gap-8 text-center md:text-start">
-          <Title title="Meet Leona" />
+          <Title title="Meet Leona" className="mx-auto md:ml-0" />
           <p>
             Leona is a psychic tarot reader and astrologer. She founded Tarot
             Witch Davao in 2018, a brand that helps individuals receive
@@ -93,7 +93,7 @@ function MobilePicture() {
       width={409}
       height={761}
       alt="Leona Aoki"
-      className="flex justify-center md:hidden"
+      className="mx-auto md:hidden"
     />
   );
 }

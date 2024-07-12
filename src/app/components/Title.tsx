@@ -2,9 +2,10 @@ import Image from "next/image";
 
 interface Props {
   title: string;
+  className?: string;
 }
 
-export function Title({ title }: Props) {
+export function Title({ title, className }: Props) {
   return (
     <>
       <h2>{title}</h2>
@@ -13,7 +14,7 @@ export function Title({ title }: Props) {
         width={267}
         height={32}
         alt=""
-        className="mx-auto md:ml-0"
+        className={className}
       />
     </>
   );

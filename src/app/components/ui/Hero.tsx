@@ -43,7 +43,7 @@ export function Hero() {
   };
 
   return (
-    <div className="h-screen">
+    <section className="h-screen">
       <Navbar />
       <div className="h-[calc(100vh-136px)]">
         <div
@@ -56,7 +56,7 @@ export function Hero() {
               initial="hidden"
               animate="visible"
               variants={variants}
-              className="text-white mx-auto w-full max-w-[992px] text-center"
+              className="mx-auto w-full max-w-[992px] text-center text-white"
             >
               Are you in need of a sign or cosmic guidance?
             </motion.h1>
@@ -66,7 +66,7 @@ export function Hero() {
               animate="visible"
               variants={variants}
               transition={{ ...transition, delay: 0.3 }}
-              className="text-white mx-auto w-full max-w-[768px] text-center text-2xl"
+              className="mx-auto w-full max-w-[768px] text-center text-2xl text-white"
             >
               With us, you can receive help in finding what you need through our
               psychic readings and esoteric knowledge.
@@ -154,6 +154,6 @@ export function Hero() {
       <div className="absolute bottom-0 h-[96px] w-full">
         <Image src="/assets/rip-1.png" fill alt="" className="object-cover" />
       </div>
-    </div>
+    </section>
   );
 }
