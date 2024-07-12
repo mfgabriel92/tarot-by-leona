@@ -1,3 +1,3 @@
-export { About } from "./About";
-export { Hero } from "./Hero";
-export { Services } from "./Services";
+export { Button } from "./Button";
+export { Navbar } from "./Navbar";
+export { Title } from "./Title";

@@ -3,7 +3,7 @@
 import { motion, useAnimation, useInView } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
-import { Title } from "../Title";
+import { Title } from "./ui";
 
 export function About() {
   const ref = useRef<HTMLDivElement | null>(null);

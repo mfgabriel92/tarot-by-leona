@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/app/components/Button";
+import { Button } from "@/app/components/ui/Button";
 import {
   motion,
   MotionConfig,
@@ -11,7 +11,7 @@ import {
 import Image from "next/image";
 import { useRef } from "react";
 import { MouseParallax } from "react-just-parallax";
-import { Navbar } from "./Navbar";
+import { Navbar } from "./ui/Navbar";
 
 export function Hero() {
   const ref = useRef<HTMLDivElement | null>(null);

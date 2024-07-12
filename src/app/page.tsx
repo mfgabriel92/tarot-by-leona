@@ -1,4 +1,4 @@
-import { About, Hero, Services } from "@/app/components/ui";
+import { About, Hero, Services } from "@/app/components";
 
 export default function Home() {
   return (
