@@ -37,6 +37,7 @@ export function Tarot() {
         <div className="relative -top-16 flex min-h-[400px] flex-1 items-start justify-center">
           {cards?.map((rotate, i) => (
             <motion.img
+              key={i}
               src={`/assets/services/tarot/tarot-${i + 1}.png`}
               width={243}
               height={442}
