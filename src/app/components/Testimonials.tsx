@@ -57,28 +57,28 @@ export function Testimonials() {
     });
   }, [emblaApi]);
 
-  console.log(selectedSlide);
-
   return (
-    <section className="relative h-[768px] w-full">
-      <div className="flex flex-col items-center justify-center gap-8 pt-32">
+    <section className="relative h-auto w-full pb-[60px] md:pb-[80px]">
+      <Image
+        src="/assets/last-quarter-moon.png"
+        width={61}
+        height={121}
+        alt=""
+        className="absolute -top-3 left-[48%]"
+      />
+      <div className="flex flex-col items-center justify-center gap-8 pt-16 md:pt-32">
         <h2 className="text-white">What my clients say</h2>
         <Image
           src="/assets/title-separator-white.png"
           width={267}
           height={32}
           alt=""
-          className=""
         />
       </div>
       <div className="mt-12 overflow-hidden" ref={emblaRef}>
         <div className="flex">
           {testimonials.map((t, i) => (
-            <div
-              key={i}
-              className="mx-3 flex flex-col gap-8 rounded-md bg-white p-8"
-              style={{ flex: "0 0 40%" }}
-            >
+            <div key={i} className="embla__slide">
               <p className="italic">{t.text}</p>
               <span className="self-end font-title text-2xl">{t.name}</span>
             </div>

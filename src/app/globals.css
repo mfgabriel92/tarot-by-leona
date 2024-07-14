@@ -26,13 +26,19 @@ a {
   @apply font-body text-lg text-gray-500;
 }
 
-.relative {
-  position: relative;
+.embla__slide {
+  @apply mx-8 flex flex-col gap-8 rounded-md bg-white p-8;
+  flex: 0 0 40%;
 }
 
-.embla {
-  @apply overflow-hidden;
+@media (max-width: 992px) {
+  .embla__slide {
+    flex: 0 0 70%;
+  }
 }
-.embla__container {
-  @apply flex;
+
+@media (max-width: 420px) {
+  .embla__slide {
+    flex: 0 0 95%;
+  }
 }
