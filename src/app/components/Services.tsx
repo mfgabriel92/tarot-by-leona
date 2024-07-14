@@ -22,7 +22,7 @@ export function Services() {
         alt=""
         className="w-full"
       />
-      <div className="bg-pink-500/5 px-6 pb-12">
+      <div className="bg-pink-500/5 px-6 pb-0 md:pb-12">
         <div className="container flex flex-col items-center gap-6 pt-12 md:pt-0">
           <Title title="My Services" />
           <div className="flex flex-1 flex-col gap-0 md:gap-20">
