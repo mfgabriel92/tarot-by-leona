@@ -1,8 +1,9 @@
 "use client";
 
 import useEmblaCarousel from "embla-carousel-react";
+import { motion, useAnimation, useInView } from "framer-motion";
 import Image from "next/image";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const testimonials = [
   {
@@ -38,6 +39,9 @@ const testimonials = [
 export function Testimonials() {
   const [selectedSlide, setSelectedSlide] = useState(0);
   const [emblaRef, emblaApi] = useEmblaCarousel();
+  const slidesRef = useRef<HTMLDivElement | null>(null);
+  const controls = useAnimation();
+  const inView = useInView(slidesRef, { once: true });
 
   const prev = useCallback(() => {
     if (emblaApi) {
@@ -56,6 +60,28 @@ export function Testimonials() {
       setSelectedSlide(emblaApi?.selectedScrollSnap());
     });
   }, [emblaApi]);
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [inView]);
+
+  const containerVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const slidesVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: { y: 0, opacity: 1 },
+  };
 
   return (
     <section className="relative h-auto w-full pb-[60px] md:pb-[80px]">
@@ -76,14 +102,25 @@ export function Testimonials() {
         />
       </div>
       <div className="mt-12 overflow-hidden" ref={emblaRef}>
-        <div className="flex">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate={controls}
+          transition={{ duration: 1 }}
+          className="flex"
+          ref={slidesRef}
+        >
           {testimonials.map((t, i) => (
-            <div key={i} className="embla__slide">
+            <motion.div
+              key={i}
+              variants={slidesVariants}
+              className="embla__slide"
+            >
               <p className="italic">{t.text}</p>
               <span className="self-end font-title text-2xl">{t.name}</span>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
         <div className="mx-auto mt-8 flex items-center justify-center gap-12">
           <Image
             src="/assets/right-arrow.png"
