@@ -11,7 +11,7 @@ export function Title({ title, className }: Props) {
       <h2>{title}</h2>
       <Image
         src="/assets/title-separator.png"
-        width={267}
+        width={167}
         height={32}
         alt=""
         className={className}

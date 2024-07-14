@@ -35,8 +35,6 @@ const testimonials = [
   },
 ];
 
-const noOfDots = testimonials.length / 3;
-
 export function Testimonials() {
   const [selectedSlide, setSelectedSlide] = useState(0);
   const [emblaRef, emblaApi] = useEmblaCarousel();

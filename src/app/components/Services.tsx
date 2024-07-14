@@ -23,9 +23,9 @@ export function Services() {
         className="w-full"
       />
       <div className="bg-pink-500/5 px-6 pb-12">
-        <div className="container flex flex-col items-center gap-8 pt-12 md:pt-0">
+        <div className="container flex flex-col items-center gap-6 pt-12 md:pt-0">
           <Title title="My Services" />
-          <div className="flex flex-1 flex-col gap-24">
+          <div className="flex flex-1 flex-col gap-0 md:gap-20">
             <Tarot />
             <Astrology />
             <Oracle />
@@ -40,10 +40,10 @@ const tarotCardsRotation = ["-30deg", "-10deg", "10deg", "30deg"];
 
 function Tarot() {
   return (
-    <div className="container flex flex-col gap-12">
-      <h2>Tarot</h2>
+    <div className="container flex flex-col items-center gap-6 md:items-start">
+      <h2 className="text-start">Tarot</h2>
       <div className="flex flex-col gap-24 md:flex-row md:gap-8">
-        <div className="flex flex-1 flex-col gap-6">
+        <div className="flex flex-1 flex-col gap-4 text-center md:text-start">
           <p>
             Tarot reading is a form of divination that has been practiced for
             centuries. It involves using a set of cards (usually containing 78
@@ -67,12 +67,12 @@ function Tarot() {
           alt=""
           className="hidden self-center md:block"
         />
-        <div className="relative -top-16 flex min-h-[400px] flex-1 items-start justify-center">
+        <div className="relative -top-16 flex min-h-[400px] flex-1 items-center justify-center">
           {tarotCardsRotation?.map((rotate, i) => (
             <motion.img
               key={i}
               src={`/assets/services/tarot/tarot-${i + 1}.png`}
-              width={243}
+              width={203}
               height={442}
               initial={{ rotate: 0 }}
               drag
@@ -111,18 +111,19 @@ function Astrology() {
   const rotate = useSpring(rotateValue, { damping: 20 });
 
   return (
-    <div className="container flex flex-col gap-12">
-      <div className="order-first flex flex-col gap-24 md:flex-row md:gap-8">
+    <div className="container flex flex-col">
+      <div className="order-first flex flex-col gap-6 md:flex-row md:gap-8">
         <motion.div
           ref={ref}
           style={{ rotate }}
-          className="order-last flex justify-center md:order-first"
+          className="order-last flex flex-1 justify-center md:order-first"
         >
           <Image
             src="/assets/services/astrology/astrology-chart.png"
-            width={545}
-            height={438}
+            width={520}
+            height={480}
             alt="Astrology"
+            className="object-contain"
           />
         </motion.div>
         <Image
@@ -132,7 +133,7 @@ function Astrology() {
           alt=""
           className="hidden self-center md:block"
         />
-        <div className="flex flex-1 flex-col gap-6">
+        <div className="flex flex-1 flex-col items-center gap-6 md:items-start">
           <h2>Astrology</h2>
           <p>
             Astrology is an ancient divination practice that developed thousands
@@ -159,14 +160,14 @@ function Astrology() {
   );
 }
 
-const oracleCardsRotation = ["-30deg", "0deg", "30deg"];
+const oracleCardsRotation = ["-20deg", "0deg", "20deg"];
 
 function Oracle() {
   return (
-    <div className="container flex flex-col gap-12">
+    <div className="container flex flex-col items-center gap-6 md:items-start">
       <h2>Oracle</h2>
       <div className="flex flex-col gap-24 md:flex-row md:gap-8">
-        <div className="flex flex-1 flex-col gap-6">
+        <div className="flex flex-1 flex-col gap-4 text-center md:text-start">
           <p>
             Oracle card reading is a form of divination that consists of varying
             numbers of cards. Unlike tarot cards, it is free-form and does not
@@ -202,7 +203,7 @@ function Oracle() {
             <motion.img
               key={i}
               src={`/assets/services/oracle/oracle-${i + 1}.png`}
-              width={280}
+              width={240}
               height={483}
               initial={{ rotate: 0 }}
               drag

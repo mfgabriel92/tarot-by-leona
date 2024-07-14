@@ -31,7 +31,7 @@ export function About() {
     <>
       <Image
         src="/assets/constelation.png"
-        width={586}
+        width={486}
         height={1293}
         alt=""
         className="absolute -right-0 opacity-70"
@@ -46,7 +46,7 @@ export function About() {
       >
         <DesktopPicture />
         <MobilePicture />
-        <div className="flex flex-1 flex-col justify-center gap-8 text-center md:text-start">
+        <div className="flex flex-1 flex-col justify-center gap-6 text-center md:text-start">
           <Title title="Meet Leona" className="mx-auto md:ml-0" />
           <p>
             Leona is a psychic tarot reader and astrologer. She founded Tarot
@@ -78,7 +78,7 @@ function DesktopPicture() {
   return (
     <Image
       src="/assets/leona.png"
-      width={552}
+      width={452}
       height={1056}
       alt="Leona Aoki"
       className="hidden md:block"
@@ -90,7 +90,7 @@ function MobilePicture() {
   return (
     <Image
       src="/assets/leona-mobile.png"
-      width={409}
+      width={309}
       height={761}
       alt="Leona Aoki"
       className="mx-auto md:hidden"
