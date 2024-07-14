@@ -27,7 +27,7 @@ a {
 }
 
 .embla__slide {
-  @apply mx-8 flex flex-col gap-8 rounded-md bg-white p-8;
+  @apply mx-8 flex select-none flex-col gap-8 rounded-md bg-white p-8;
   flex: 0 0 40%;
 }
 
