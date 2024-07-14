@@ -96,7 +96,7 @@ export function Testimonials() {
         <h2 className="text-white">What my clients say</h2>
         <Image
           src="/assets/title-separator-white.png"
-          width={267}
+          width={167}
           height={32}
           alt=""
         />
@@ -106,7 +106,6 @@ export function Testimonials() {
           variants={containerVariants}
           initial="hidden"
           animate={controls}
-          transition={{ duration: 1 }}
           className="flex"
           ref={slidesRef}
         >
