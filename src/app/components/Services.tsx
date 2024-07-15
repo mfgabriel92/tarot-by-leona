@@ -7,7 +7,7 @@ import { Title } from "./ui/Title";
 
 export function Services() {
   return (
-    <section className="relative mt-8 w-full">
+    <section id="services" className="relative mt-8 w-full">
       <Image
         src="/assets/moon.png"
         width={72}

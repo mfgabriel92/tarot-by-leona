@@ -84,7 +84,10 @@ export function Testimonials() {
   };
 
   return (
-    <section className="relative h-auto w-full pb-[60px] md:pb-[80px]">
+    <section
+      id="testimonials"
+      className="relative h-auto w-full pb-[60px] md:pb-[80px]"
+    >
       <Image
         src="/assets/last-quarter-moon.png"
         width={61}
