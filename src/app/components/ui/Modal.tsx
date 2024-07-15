@@ -43,13 +43,13 @@ export function Modal({
   return (
     <motion.div
       onClick={toggle}
-      className="fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity"
+      className="fixed inset-0 z-10 bg-gray-900 bg-opacity-75 transition-opacity"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
       <motion.div
-        className="fixed inset-0 z-10 w-screen overflow-y-auto"
+        className="fixed inset-0 z-20 w-screen overflow-y-auto"
         variants={variants}
         initial="hidden"
         animate="visible"

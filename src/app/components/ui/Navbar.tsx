@@ -1,4 +1,4 @@
-import { faFacebook, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
@@ -32,7 +32,7 @@ function DesktopNavbar() {
       </nav>
       <nav className="flex flex-1 justify-end gap-8 text-white">
         <Link href="#" className="text-white">
-          <FontAwesomeIcon icon={faLinkedin} size="lg" />
+          <FontAwesomeIcon icon={faInstagram} size="lg" />
         </Link>
         <Link href="#" className="text-white">
           <FontAwesomeIcon icon={faFacebook} size="lg" />

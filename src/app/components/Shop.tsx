@@ -50,7 +50,7 @@ export function Shop() {
   };
 
   return (
-    <section className="container mx-auto mt-12 flex flex-col items-center gap-6">
+    <section className="container mx-auto mb-12 mt-12 flex flex-col items-center gap-6 md:mb-6">
       <Title title="Check out my products" className="mx-auto" />
       <p className="text-center">
         If you are interested in purchasing any of these bracelets, please send
