@@ -37,6 +37,7 @@ export function About() {
         className="absolute -right-0 opacity-70"
       />
       <motion.section
+        id="about"
         initial="hidden"
         animate={controls}
         variants={variants}
