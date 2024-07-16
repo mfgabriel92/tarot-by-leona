@@ -47,7 +47,7 @@ export function About() {
       >
         <DesktopPicture />
         <MobilePicture />
-        <div className="flex flex-1 flex-col justify-center gap-6 text-center md:text-start">
+        <div className="flex flex-1 flex-col justify-center gap-6 px-4 text-center md:px-0 md:text-start">
           <Title title="Meet Leona" className="mx-auto md:ml-0" />
           <p>
             Leona is a psychic tarot reader and astrologer. She founded Tarot

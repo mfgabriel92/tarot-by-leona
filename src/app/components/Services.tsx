@@ -2,19 +2,33 @@
 
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import Image from "next/image";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Title } from "./ui/Title";
 
 export function Services() {
+  const [drag, setDrag] = useState(document.documentElement.clientWidth > 768);
+
+  useEffect(() => {
+    function toggleDraggable() {
+      setDrag(document.documentElement.clientWidth > 768);
+    }
+
+    window.addEventListener("resize", toggleDraggable);
+    return () => window.removeEventListener("resize", toggleDraggable);
+  }, []);
+
   return (
-    <section id="services" className="relative mt-8 w-full">
-      <Image
-        src="/assets/moon.png"
-        width={72}
-        height={96}
-        alt=""
-        className="absolute -top-6 left-[46%] md:left-[48.5%] md:top-0"
-      />
+    <section id="services" className="relative mt-12 w-full pt-4 md:mt-8">
+      <div className="flex w-full justify-center">
+        <div className="absolute top-0 h-[96px] w-[72px]">
+          <Image
+            src="/assets/moon.png"
+            fill
+            className="object-fit absolute"
+            alt=""
+          />
+        </div>
+      </div>
       <Image
         src="/assets/services-bg.png"
         width={1920}
@@ -26,9 +40,9 @@ export function Services() {
         <div className="container flex flex-col items-center gap-6 pt-12 md:pt-0">
           <Title title="My Services" />
           <div className="flex flex-1 flex-col gap-0 md:gap-20">
-            <Tarot />
+            <Tarot drag={drag} />
             <Astrology />
-            <Oracle />
+            <Oracle drag={drag} />
           </div>
         </div>
       </div>
@@ -38,7 +52,7 @@ export function Services() {
 
 const tarotCardsRotation = ["-30deg", "-10deg", "10deg", "30deg"];
 
-function Tarot() {
+function Tarot({ drag = true }: { drag: boolean }) {
   return (
     <div className="container flex flex-col items-center gap-6 md:items-start">
       <h2 className="text-start">Tarot</h2>
@@ -67,15 +81,13 @@ function Tarot() {
           alt=""
           className="hidden self-center md:block"
         />
-        <div className="relative -top-16 flex min-h-[400px] flex-1 items-center justify-center">
+        <div className="relative -top-16 flex min-h-[300px] flex-1 items-center justify-center md:min-h-[400px]">
           {tarotCardsRotation?.map((rotate, i) => (
             <motion.img
               key={i}
               src={`/assets/services/tarot/tarot-${i + 1}.png`}
-              width={203}
-              height={442}
               initial={{ rotate: 0 }}
-              drag
+              drag={drag}
               dragConstraints={{
                 top: 0,
                 bottom: 0,
@@ -91,7 +103,7 @@ function Tarot() {
                 ease: "backInOut",
                 damping: 20,
               }}
-              className="absolute origin-bottom cursor-pointer"
+              className="absolute w-[150px] origin-bottom cursor-pointer md:w-[203px]"
             />
           ))}
         </div>
@@ -133,7 +145,7 @@ function Astrology() {
           alt=""
           className="hidden self-center md:block"
         />
-        <div className="flex flex-1 flex-col items-center gap-6 md:items-start">
+        <div className="flex flex-1 flex-col gap-6 text-center md:text-start">
           <h2>Astrology</h2>
           <p>
             Astrology is an ancient divination practice that developed thousands
@@ -162,7 +174,7 @@ function Astrology() {
 
 const oracleCardsRotation = ["-20deg", "0deg", "20deg"];
 
-function Oracle() {
+function Oracle({ drag = true }: { drag: boolean }) {
   return (
     <div className="container flex flex-col items-center gap-6 md:items-start">
       <h2>Oracle</h2>
@@ -198,15 +210,13 @@ function Oracle() {
           alt=""
           className="hidden self-center md:block"
         />
-        <div className="relative -top-16 flex min-h-[400px] flex-1 items-center justify-center">
+        <div className="relative -top-16 flex min-h-[300px] flex-1 items-center justify-center md:min-h-[400px]">
           {oracleCardsRotation?.map((rotate, i) => (
             <motion.img
               key={i}
               src={`/assets/services/oracle/oracle-${i + 1}.png`}
-              width={240}
-              height={483}
               initial={{ rotate: 0 }}
-              drag
+              drag={drag}
               dragConstraints={{
                 top: 0,
                 bottom: 0,
@@ -222,7 +232,7 @@ function Oracle() {
                 ease: "backInOut",
                 damping: 20,
               }}
-              className="absolute origin-bottom cursor-pointer"
+              className="absolute w-[180px] origin-bottom cursor-pointer md:w-[240px]"
             />
           ))}
         </div>

@@ -5,23 +5,7 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <>
-      <DesktopFooter />
-      <MobileFooter />
-    </>
-  );
-}
-
-function DesktopFooter() {
-  return (
-    <footer className="relative hidden w-full py-4 md:block">
-      <Image
-        src="/assets/yellow-star.png"
-        width={97}
-        height={97}
-        className="absolute -top-6 left-[48%]"
-        alt=""
-      />
+    <footer className="relative w-full py-4">
       <Image
         src="/assets/rip-4.png"
         width={1920}
@@ -29,7 +13,26 @@ function DesktopFooter() {
         className="absolute top-0 -z-10 object-cover"
         alt=""
       />
-      <div className="container flex h-full flex-1 items-center justify-between pt-[49px]">
+      <div className="flex w-full justify-center">
+        <div className="absolute -top-[40px] h-[97px] w-[97px] md:-top-[30px]">
+          <Image
+            src="/assets/yellow-star.png"
+            fill
+            className="object-fit absolute"
+            alt=""
+          />
+        </div>
+      </div>
+      <DesktopFooter />
+      <MobileFooter />
+    </footer>
+  );
+}
+
+function DesktopFooter() {
+  return (
+    <>
+      <div className="container hidden h-full flex-1 items-center justify-between pt-[49px] md:flex">
         <nav className="flex flex-1 items-center gap-4">
           <Link className="font-title text-sm text-white" href="#">
             Privacy Policy
@@ -79,28 +82,14 @@ function DesktopFooter() {
         placeholder="blur"
         blurDataURL="/assets/footer-bg-blurred.png"
       />
-    </footer>
+    </>
   );
 }
 
 function MobileFooter() {
   return (
-    <footer className="relative block w-full py-4 md:hidden">
-      <Image
-        src="/assets/yellow-star.png"
-        width={97}
-        height={97}
-        className="absolute -top-10 left-[45.5%]"
-        alt=""
-      />
-      <Image
-        src="/assets/rip-4.png"
-        width={1920}
-        height={49}
-        className="absolute top-0 -z-10 object-cover"
-        alt=""
-      />
-      <div className="container flex flex-col items-center gap-6 pb-6 pt-12">
+    <>
+      <div className="container flex flex-col items-center gap-6 pb-6 pt-12 md:hidden">
         <Image
           src="/assets/logo.png"
           width={252}
@@ -144,6 +133,6 @@ function MobileFooter() {
         placeholder="blur"
         blurDataURL="/assets/footer-bg-blurred.png"
       />
-    </footer>
+    </>
   );
 }

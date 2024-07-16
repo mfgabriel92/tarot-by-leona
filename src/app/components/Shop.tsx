@@ -52,8 +52,18 @@ export function Shop() {
   return (
     <section
       id="shop"
-      className="container mx-auto mb-12 mt-12 flex flex-col items-center gap-6 md:mb-6"
+      className="container relative mx-auto mb-12 flex flex-col justify-center gap-6 pt-8 text-center md:mb-6"
     >
+      <div className="flex w-full justify-center">
+        <div className="absolute -top-14 h-[96px] w-[72px]">
+          <Image
+            src="/assets/moon.png"
+            fill
+            className="object-fit absolute rotate-180"
+            alt=""
+          />
+        </div>
+      </div>
       <Title title="Check out my products" className="mx-auto" />
       <p className="text-center">
         If you are interested in purchasing any of these bracelets, please send
