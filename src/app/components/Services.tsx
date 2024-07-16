@@ -6,15 +6,18 @@ import { useEffect, useRef, useState } from "react";
 import { Title } from "./ui/Title";
 
 export function Services() {
-  const [drag, setDrag] = useState(document.documentElement.clientWidth > 768);
+  const [drag, setDrag] = useState(true);
 
   useEffect(() => {
+    if (!document) return;
+
     function toggleDraggable() {
       setDrag(document.documentElement.clientWidth > 768);
     }
 
-    window.addEventListener("resize", toggleDraggable);
-    return () => window.removeEventListener("resize", toggleDraggable);
+    typeof window && window.addEventListener("resize", toggleDraggable);
+    return () =>
+      window && window.removeEventListener("resize", toggleDraggable);
   }, []);
 
   return (
