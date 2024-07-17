@@ -82,6 +82,8 @@ function DesktopPicture() {
       width={452}
       height={1056}
       alt="Leona Aoki"
+      placeholder="blur"
+      blurDataURL="/assets/leona-blurred.png"
       className="hidden md:block"
     />
   );
@@ -94,6 +96,8 @@ function MobilePicture() {
       width={309}
       height={761}
       alt="Leona Aoki"
+      placeholder="blur"
+      blurDataURL="/assets/leona-mobile-blurred.png"
       className="mx-auto md:hidden"
     />
   );
