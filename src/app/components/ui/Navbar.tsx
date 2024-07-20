@@ -24,7 +24,7 @@ function DesktopNavbar() {
         height={116}
         alt="Tarot by Leona"
       />
-      <nav className="mx-8 flex flex-1 justify-end gap-8">
+      <nav className="mx-8 flex flex-1 justify-center gap-8">
         <Link className="font-title text-white" href="#about">
           About
         </Link>
@@ -38,7 +38,7 @@ function DesktopNavbar() {
           Shop
         </Link>
       </nav>
-      <nav className="flex flex-1 justify-end gap-8 text-white">
+      <nav className="flex w-full max-w-[352px] justify-end gap-8 text-white">
         <Socials />
       </nav>
     </header>

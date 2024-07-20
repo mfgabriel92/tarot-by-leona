@@ -131,6 +131,7 @@ export function Testimonials() {
             height={44}
             alt="right"
             onClick={prev}
+            className="cursor-pointer transition-all hover:scale-[1.2]"
           />
           <div className="flex items-center gap-4">
             {testimonials.map((_, i) => (
@@ -145,6 +146,7 @@ export function Testimonials() {
             height={44}
             alt="left"
             onClick={next}
+            className="cursor-pointer transition-all hover:scale-[1.2]"
           />
         </div>
       </div>
