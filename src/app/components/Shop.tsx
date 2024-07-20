@@ -97,9 +97,9 @@ export function Shop() {
             </div>
             <div className="flex items-end gap-4 p-4">
               <div className="flex flex-1 flex-col">
-                <h3 className="flex-1 text-xl">{product.name}</h3>{" "}
+                <h3 className="flex-1 text-left text-xl">{product.name}</h3>{" "}
                 {product.nickname && (
-                  <span className="text-lg italic text-gray-500">
+                  <span className="text-left text-lg italic text-gray-500">
                     "{product.nickname}"
                   </span>
                 )}

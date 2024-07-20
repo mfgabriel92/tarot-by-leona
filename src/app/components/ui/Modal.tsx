@@ -67,11 +67,11 @@ export function Modal({
                 />
               </div>
               <div className="flex flex-col gap-4 p-6">
-                <div className="flex items-center gap-4">
-                  <h3 className="text-3xl">{name}</h3>{" "}
+                <div className="flex flex-col text-left xs:flex-row sm:gap-2">
+                  <h3 className="text-3xl">{name}</h3>
                   {nickname && (
-                    <span className="text-lg italic text-gray-500">
-                      - "{nickname}"
+                    <span className="flex items-center text-lg italic text-gray-400">
+                      <i className="hidden px-2 xs:block">-</i> "{nickname}"
                     </span>
                   )}
                 </div>
