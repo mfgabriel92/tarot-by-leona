@@ -34,7 +34,8 @@ export function About() {
         width={486}
         height={1293}
         alt=""
-        className="absolute -right-0 opacity-70"
+        draggable={false}
+        className="absolute -right-0 -z-10 select-none opacity-70"
       />
       <motion.section
         id="about"

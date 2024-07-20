@@ -24,7 +24,7 @@ export default function Home() {
           width={64}
           height={64}
           alt="Tarot by Leona Messenger"
-          className="fixed bottom-24 right-24 z-30"
+          className="fixed bottom-8 right-8 z-30 md:bottom-12 md:right-12"
         />
       </Link>
     </>

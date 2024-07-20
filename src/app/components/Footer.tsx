@@ -1,7 +1,6 @@
-import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
+import { Socials } from "./ui/Socials";
 
 export function Footer() {
   return (
@@ -54,12 +53,7 @@ function DesktopFooter() {
         </div>
         <div className="flex flex-1 flex-col items-end gap-2">
           <nav className="flex justify-end gap-8 text-white">
-            <Link href="#" className="text-white">
-              <FontAwesomeIcon icon={faInstagram} size="sm" />
-            </Link>
-            <Link href="#" className="text-white">
-              <FontAwesomeIcon icon={faFacebook} size="sm" />
-            </Link>
+            <Socials />
           </nav>
           <div className="flex flex-col items-center gap-1">
             <span className="text-title text-xs text-white">Developed By</span>
@@ -106,12 +100,7 @@ function MobileFooter() {
           </Link>
         </nav>
         <nav className="flex gap-10 text-white">
-          <Link href="#" className="text-white">
-            <FontAwesomeIcon icon={faInstagram} size="lg" />
-          </Link>
-          <Link href="#" className="text-white">
-            <FontAwesomeIcon icon={faFacebook} size="lg" />
-          </Link>
+          <Socials />
         </nav>
         <div className="flex flex-col items-center gap-1">
           <span className="text-title text-xs text-white">Developed By</span>
