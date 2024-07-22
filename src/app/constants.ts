@@ -1,4 +1,4 @@
-export const siteUrl = "https://tarot-by-leona.netlify.app";
+export const siteUrl = "https://www.tarot-by-leona.com";
 export const keywords = [
   "tarot",
   "astro",
