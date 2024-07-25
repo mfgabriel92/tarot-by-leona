@@ -5,43 +5,14 @@ import { motion, useAnimation, useInView } from "framer-motion";
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 
-const testimonials = [
-  {
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, eveniet sequi dicta omnis, aliquam qui laudantium dolores, veritatis voluptates corrupti perferendis assumenda consequuntur iusto excepturi quam odit officiis labore maxime.",
-    name: "John Doe",
-  },
-  {
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, eveniet sequi dicta omnis, aliquam qui laudantium dolores, veritatis voluptates corrupti perferendis assumenda consequuntur iusto excepturi quam odit officiis labore maxime.",
-    name: "John Doe",
-  },
-  {
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, eveniet sequi dicta omnis, aliquam qui laudantium dolores, veritatis voluptates corrupti perferendis assumenda consequuntur iusto excepturi quam odit officiis labore maxime.",
-    name: "John Doe",
-  },
-  {
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, eveniet sequi dicta omnis, aliquam qui laudantium dolores, veritatis voluptates corrupti perferendis assumenda consequuntur iusto excepturi quam odit officiis labore maxime.",
-    name: "John Doe",
-  },
-  {
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, eveniet sequi dicta omnis, aliquam qui laudantium dolores, veritatis voluptates corrupti perferendis assumenda consequuntur iusto excepturi quam odit officiis labore maxime.",
-    name: "John Doe",
-  },
-  {
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, eveniet sequi dicta omnis, aliquam qui laudantium dolores, veritatis voluptates corrupti perferendis assumenda consequuntur iusto excepturi quam odit officiis labore maxime.",
-    name: "John Doe",
-  },
-  {
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, eveniet sequi dicta omnis, aliquam qui laudantium dolores, veritatis voluptates corrupti perferendis assumenda consequuntur iusto excepturi quam odit officiis labore maxime.",
-    name: "John Doe",
-  },
-];
-
 export function Testimonials() {
   const [selectedSlide, setSelectedSlide] = useState(0);
   const [emblaRef, emblaApi] = useEmblaCarousel();
   const slidesRef = useRef<HTMLDivElement | null>(null);
   const controls = useAnimation();
   const inView = useInView(slidesRef, { once: true });
+
+  const testimonialsLength = 12;
 
   const prev = useCallback(() => {
     if (emblaApi) {
@@ -113,14 +84,18 @@ export function Testimonials() {
           className="flex"
           ref={slidesRef}
         >
-          {testimonials.map((t, i) => (
+          {[...Array(testimonialsLength)].map((t, i) => (
             <motion.div
               key={i}
               variants={slidesVariants}
               className="embla__slide"
             >
-              <p className="italic">{t.text}</p>
-              <span className="self-end font-title text-2xl">{t.name}</span>
+              <Image
+                src={`/assets/testimonials/${i + 1}.jpeg`}
+                width={600}
+                height={100}
+                alt=""
+              />
             </motion.div>
           ))}
         </motion.div>
@@ -134,7 +109,7 @@ export function Testimonials() {
             className="cursor-pointer transition-all hover:scale-[1.2]"
           />
           <div className="flex items-center gap-4">
-            {testimonials.map((_, i) => (
+            {[...Array(testimonialsLength)].map((_, i) => (
               <div
                 className={`size-4 rounded-full ${selectedSlide === i ? "bg-yellow-400" : "bg-white"}`}
               ></div>
